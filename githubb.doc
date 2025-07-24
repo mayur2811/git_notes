@@ -1,0 +1,1698 @@
+Learning Git from basic to advanced involves understanding version control, branching, merging, collaboration, and advanced workflows. Here's a detailed list of Git topics:
+
+Git Basics
+Introduction to Version Control
+
+
+What is Version Control?
+Benefits of Git over other VCS (SVN, Mercurial)
+Installing Git (Windows, Mac, Linux)
+Setting Up Git
+
+
+Configuring Git (git config command)
+Setting up username and email (git config --global user.name "Your Name")
+Checking Git configuration (git config --list)
+Setting up a global .gitignore
+Git Repository Initialization
+
+
+Creating a new repository (git init)
+Cloning an existing repository (git clone <repo_url>)
+Basic Git Workflow
+
+
+Checking repository status (git status)
+Adding files to staging area (git add <file>)
+Committing changes (git commit -m "Message")
+Viewing commit history (git log)
+File Operations in Git
+
+
+Viewing differences (git diff)
+Viewing changes before committing (git diff --staged)
+Removing files from Git (git rm <file>)
+Renaming files (git mv <old> <new>)
+
+Git Branching and Merging
+Working with Branches
+
+
+Creating a new branch (git branch <branch_name>)
+Listing branches (git branch)
+Switching branches (git checkout <branch_name>)
+Creating and switching in one command (git checkout -b <branch_name>)
+Deleting a branch (git branch -d <branch_name>)
+Merging and Resolving Conflicts
+
+
+Merging branches (git merge <branch_name>)
+Handling merge conflicts
+Aborting a merge (git merge --abort)
+Rebasing
+
+
+What is rebasing?
+Rebasing a branch (git rebase <branch_name>)
+Interactive rebasing (git rebase -i HEAD~n)
+Squashing commits
+
+Remote Repositories and Collaboration
+Working with Remotes
+
+
+Adding a remote repository (git remote add origin <url>)
+Viewing remotes (git remote -v)
+Removing a remote (git remote remove <remote_name>)
+Fetching and Pulling Changes
+
+
+Fetching changes (git fetch origin)
+Pulling latest changes (git pull origin <branch>)
+Pushing Changes
+Pushing commits to remote (git push origin <branch>)
+Force push (git push --force)
+Setting an upstream branch (git push --set-upstream origin <branch>)
+Working with Forks and Pull Requests
+Forking a repository
+Creating a pull request
+Reviewing and merging pull requests
+
+Advanced Git Topics
+Git Stashing
+Saving work temporarily (git stash)
+Applying stash (git stash apply)
+Listing stashes (git stash list)
+Dropping a stash (git stash drop)
+Git Reset and Revert
+Undoing changes (git checkout -- <file>)
+Resetting commits (git reset --soft, git reset --hard)
+Reverting commits (git revert <commit_hash>)
+Git Tags
+Creating a tag (git tag <tag_name>)
+Listing tags (git tag)
+Deleting a tag (git tag -d <tag_name>)
+Pushing tags to remote (git push origin <tag_name>)
+Git Cherry-Pick
+Selecting specific commits (git cherry-pick <commit_hash>)
+
+Git Best Practices and Workflows
+Git Best Practices
+Writing meaningful commit messages
+Keeping commits small and atomic
+Using branches effectively
+Popular Git Workflows
+Git Feature Branch Workflow
+Gitflow Workflow
+GitHub Flow
+Git Hooks
+What are Git Hooks?
+Pre-commit and post-commit hooks
+Automating workflows with hooks
+
+Git Debugging and Recovery
+Debugging in Git
+Finding bugs using git bisect
+Using git blame to track changes
+Recovering Lost Work
+Finding lost commits (git reflog)
+Restoring deleted branches
+
+This is a complete roadmap to learning Git from basics to advanced. Let me know if you want to focus on a specific area! 🚀
+
+Advanced Git Topics (Beyond the Basics)
+Once you're comfortable with Git fundamentals, you can explore more advanced topics that focus on performance optimization, security, automation, and complex workflows. Here's a detailed breakdown:
+
+1. Git Internals (How Git Works Behind the Scenes)
+Understanding Git’s Object Model (Blobs, Trees, Commits, and Tags)
+How Git Stores Data Internally (.git/objects, index, HEAD)
+Understanding Git References (HEAD, refs, remotes)
+Difference Between SHA-1 Hashes and Commit Identifiers
+How Git Tracks File Changes (Delta vs. Snapshot Model)
+Exploring the Git Database (git cat-file, git ls-tree, git rev-parse)
+
+2. Advanced Git Branching Strategies
+Long-lived Branches vs. Short-lived Branches
+Release Branching
+Hotfix Branching
+Trunk-Based Development
+Monorepo vs. Multi-repo Strategies
+Working with Multiple Remote Repositories
+Branch Permissions & Protected Branches in GitHub/GitLab
+
+3. Advanced Rebasing Techniques
+Interactive Rebase (git rebase -i)
+Squashing multiple commits into one (squash option)
+Reordering commits
+Editing commit messages during rebase
+Dropping commits
+Handling Rebase Conflicts
+Fixing conflicts and continuing (git rebase --continue)
+Aborting a rebase (git rebase --abort)
+Skipping problematic commits (git rebase --skip)
+Rewriting Commit History
+Amending the last commit (git commit --amend)
+Changing old commit messages (reword during git rebase -i)
+Rebasing vs. Merging: When to Use Which?
+
+4. Git Submodules & Subtrees
+Git Submodules
+Adding submodules (git submodule add <repo_url>)
+Updating submodules (git submodule update --remote)
+Cloning repositories with submodules (git clone --recursive)
+Removing submodules
+Git Subtree (Alternative to submodules)
+Adding a subtree (git subtree add --prefix=<dir> <repo> <branch>)
+Pulling updates from subtree (git subtree pull)
+Pushing changes to subtree (git subtree push)
+
+5. Git Hooks (Automation in Git)
+Client-Side Hooks
+pre-commit (Run before a commit is made)
+prepare-commit-msg (Modify commit message before commit is finalized)
+commit-msg (Enforce commit message format)
+pre-push (Run tests before pushing)
+Server-Side Hooks
+pre-receive (Validate pushes)
+update (Enforce rules before updating refs)
+post-receive (Trigger CI/CD pipelines)
+Example: Automating Code Formatting Using Git Hooks
+
+6. Git Bisect (Debugging with Git)
+Finding which commit introduced a bug (git bisect start)
+Marking good and bad commits (git bisect good, git bisect bad)
+Automating the bisect process with scripts
+
+7. Git Worktrees (Multiple Working Directories from One Repo)
+Creating a new worktree (git worktree add <path> <branch>)
+Listing worktrees (git worktree list)
+Removing worktrees (git worktree remove <path>)
+
+8. Large File Handling in Git
+Git LFS (Large File Storage)
+Installing Git LFS
+Tracking large files (git lfs track "*.psd")
+Pushing LFS-tracked files
+Using LFS with GitHub/GitLab
+Alternatives to Git LFS
+Using .gitignore for large files
+Storing large files outside Git repositories
+
+9. Git Performance Optimization
+Shallow Cloning for Faster Performance (git clone --depth=1 <repo_url>)
+Pruning Unused Data (git gc, git prune)
+Cleaning Up Old Branches (git branch -d <branch>)
+Optimizing History (git reflog expire --expire=now --all && git gc --prune=now)
+Speeding Up Git Fetch & Clone (git config --global fetch.parallel 4)
+
+10. Security & Access Control in Git
+GPG Signed Commits (git commit -S)
+Signing Tags for Verification (git tag -s <tag_name> -m "message")
+Enforcing Signed Commits on GitHub & GitLab
+Restricting Branch Deletion & Protection Rules
+SSH vs. HTTPS Authentication for Git
+Managing Personal Access Tokens (PAT) in GitHub/GitLab
+
+11. Advanced Collaboration & Team Workflows
+Feature Branch Workflow
+GitFlow Workflow
+GitHub Flow
+Trunk-Based Development (TBD)
+Releasing with Git (Versioning & Changelog Management)
+Managing Multiple Contributors with Pull Requests
+Squash & Merge vs. Merge Commits
+
+12. Advanced Conflict Resolution Techniques
+Using git mergetool to Resolve Conflicts
+Understanding ours vs theirs Strategy in Merging
+Manually Resolving Complex Conflicts
+Handling Conflict in Binary Files
+
+13. Git Customization & Aliases (Boosting Productivity)
+Setting Up Shortcuts (git config --global alias.st status)
+Creating Custom Commands (git config --global alias.undo 'reset --soft HEAD~1')
+Customizing Git Logs (git log --graph --oneline --decorate --all)
+Writing Git Scripts to Automate Tasks
+
+14. Git Reflog (Undoing Mistakes & Recovering Data)
+Viewing the full history of HEAD (git reflog)
+Undoing accidental branch deletions
+Restoring lost commits
+
+15. Git Automation & CI/CD Integration
+Using Git with Jenkins, GitHub Actions, and GitLab CI/CD
+Automating Deployments with Git Hooks
+Setting Up GitOps for Kubernetes Deployments
+
+16. Forking Workflow & Managing Open Source Contributions
+Forking a Repository (git fork)
+Keeping a Fork Updated (git fetch upstream)
+Contributing to Open Source (git push origin feature-branch)
+
+Final Thoughts & Next Steps
+This covers almost every advanced topic in Git. To master these concepts, try working on real projects, contributing to open source, and experimenting with different workflows.
+Do you want a step-by-step guide on any of these topics? 🚀
+Git Internals: How Git Works Behind the Scenes
+Git is not just a version control system (VCS); it's a content-addressable file system with a unique way of storing data. Unlike older VCS like SVN, Git snapshots your project at every commit rather than storing just the differences. Let’s dive deep into how Git works internally.
+
+1. Git’s Core Architecture
+At its core, Git is built around three main components:
+Working Directory – Your local folder where you modify files.
+Staging Area (Index) – A temporary area where changes are prepared before committing.
+Git Repository (.git/) – The database that stores all commits, branches, and history.
+Where Git Stores Data?
+Git doesn’t track file differences (deltas). Instead, it takes a full snapshot of all files at each commit and efficiently stores it.
+Everything is stored inside the .git/ directory, which contains all necessary metadata.
+
+2. Understanding Git’s Object Model
+Git is fundamentally a key-value database where every file and commit is stored as an object. There are four main object types:
+Object Type
+Description
+Stored In .git/objects
+Blob
+Represents file content (not filenames)
+Yes
+Tree
+Represents directory structure
+Yes
+Commit
+Represents a snapshot of the project
+Yes
+Tag
+Points to a commit (annotated tag)
+Yes
+
+How Git Identifies Objects?
+Every object in Git is identified by a SHA-1 hash (40-character hexadecimal string).
+Example: c3f3a9e83b2a2e5b99a8e67adf8c8c22c10d745c
+This ensures data integrity—if the file changes, the hash changes.
+Example: Creating a Blob Manually
+Create a new text file:
+ echo "Hello Git Internals" > example.txt
+
+
+Hash the file and store it in .git/objects:
+ git hash-object -w example.txt
+ This will output a SHA-1 hash (e.g., 4a5c2...), which is now stored inside .git/objects.
+
+3. Git’s Internal Storage (.git/ Directory)
+When you initialize a repository using git init, Git creates a .git/ directory.
+Key Files and Directories Inside .git/
+File/Directory
+Purpose
+objects/
+Stores all Git objects (blobs, trees, commits)
+refs/
+Contains pointers to commits (branches, tags)
+HEAD
+Points to the current active branch
+index
+Stores staged file information
+config
+Repository settings
+logs/
+Records actions like checkouts and resets
+
+
+4. Understanding Git References (HEAD, Branches, Tags)
+HEAD – The Current Checked-Out Branch
+HEAD is a special pointer that refers to the current branch’s latest commit.
+You can check its value:
+ cat .git/HEAD
+ It typically outputs:
+ ref: refs/heads/main
+ This means HEAD points to refs/heads/main, which tracks the latest commit on main.
+Branches are Just Pointers
+A branch in Git is just a pointer to a commit.
+Creating a new branch does not duplicate files; it simply creates a new reference.
+Tags – Fixed References to Commits
+Unlike branches, tags don’t move.
+They are often used to mark version releases (v1.0, v2.0).
+Example: Creating a tag for a commit:
+git tag -a v1.0 -m "First release"
+
+
+5. How Git Tracks Changes
+Git tracks file changes using three statuses:
+Untracked – New files that Git isn’t tracking yet.
+Modified – Files that have been edited but not staged.
+Staged – Files added to the staging area, ready to commit.
+How Git Stores a Commit
+When you run:
+git commit -m "First commit"
+
+Git does the following:
+Takes a snapshot of staged files and stores them as a tree object.
+Creates a commit object with:
+A reference to the tree object.
+A reference to the parent commit.
+Metadata (author, timestamp, message).
+Updates the branch pointer to point to this new commit.
+
+6. Exploring Git’s Database with Commands
+View a Specific Commit
+git cat-file -p <commit-hash>
+
+This will show details of a commit, including its tree and parent commit.
+View Objects Inside .git/objects/
+git ls-tree HEAD
+
+This lists the objects (files and directories) in the latest commit.
+
+7. How Git Efficiently Stores Data
+Compression: Git compresses objects using zlib.
+Delta Encoding: If a file is modified, Git stores only the difference (delta) instead of a full copy.
+Packfiles: When the repository grows, Git repacks objects into compressed packfiles for efficiency.
+You can manually optimize storage by running:
+git gc
+
+(Garbage collection: removes unnecessary objects and compresses data.)
+
+8. Understanding Git’s History & Undoing Mistakes
+Git Reflog – Recovering Lost Commits
+If you accidentally delete a branch or commit, use:
+git reflog
+
+This shows a history of HEAD changes, helping you restore lost commits.
+Reset vs. Revert vs. Checkout
+Command
+Purpose
+git reset
+Moves HEAD and optionally changes the working directory
+git revert
+Creates a new commit that undoes a previous commit
+git checkout
+Moves to a different branch or commit
+
+
+9. Summary & Key Takeaways
+Git stores everything inside the .git/ directory.
+All data is stored as objects (blobs, trees, commits, tags).
+Each object is identified by a SHA-1 hash for integrity.
+Branches are just pointers to commits, making branching lightweight.
+Git uses compression and delta encoding to store data efficiently.
+
+Next Steps: Do You Want to Try Practical Exercises? 🚀
+Would you like hands-on examples of how to explore Git objects and manipulate history? I can provide step-by-step commands!
+
+Let's start with Git Basics from the very beginning.
+
+1. Introduction to Version Control
+Before diving into Git, it's essential to understand Version Control Systems (VCS) and why they are useful.
+What is Version Control?
+Version Control is a system that records changes to a file or set of files over time. It helps in:
+ ✅ Keeping track of changes made to the code.
+ ✅ Allowing multiple developers to work on the same project without conflicts.
+ ✅ Restoring previous versions of files if needed.
+ ✅ Collaborating efficiently in software development.
+Types of Version Control Systems
+Local Version Control – All changes are stored on your computer (e.g., saving multiple copies of files manually).
+Centralized Version Control (CVCS) – A single server stores all versions of a project (e.g., SVN, Perforce).
+Distributed Version Control (DVCS) – Each user has a full copy of the repository (e.g., Git, Mercurial).
+💡 Git is a Distributed Version Control System (DVCS), meaning every developer has a full history of the project.
+
+2. Installing Git
+Before using Git, you need to install it on your system.
+Windows
+Download Git from Git for Windows.
+Run the installer and select the default settings.
+Verify the installation by running:
+ git --version
+
+
+Mac (Using Homebrew)
+Install Homebrew if not installed:
+ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+
+Install Git:
+ brew install git
+
+
+Verify installation:
+ git --version
+
+
+Linux (Ubuntu/Debian)
+Install Git using apt:
+ sudo apt update
+sudo apt install git
+
+
+Verify installation:
+ git --version
+
+
+
+3. Setting Up Git
+Before you start using Git, you need to configure it.
+Set Your Identity
+After installation, configure your name and email (used in commits):
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+
+Check if it’s set correctly:
+git config --list
+
+Setting Up a Default Text Editor (Optional)
+Git uses a text editor for commit messages. You can set it to VS Code or Vim:
+git config --global core.editor "code --wait"
+
+Or for Vim:
+git config --global core.editor vim
+
+Setting Up a Global .gitignore File
+A .gitignore file tells Git which files or folders to ignore in a project. Create a global ignore file:
+git config --global core.excludesfile ~/.gitignore_global
+
+Example content of .gitignore_global:
+*.log
+node_modules/
+.DS_Store
+
+
+4. Git Repository Initialization
+Now, let’s start using Git in a project.
+Creating a New Repository
+Navigate to your project folder and initialize Git:
+git init
+
+This creates a hidden .git folder, which stores the repository data.
+Cloning an Existing Repository
+If a project already exists on GitHub, GitLab, or another Git service, you can copy it:
+git clone <repo_url>
+
+Example:
+git clone https://github.com/user/repo.git
+
+This downloads the project to your computer.
+
+5. Basic Git Workflow
+Checking Repository Status
+To check the current state of the working directory:
+git status
+
+Adding Files to Staging Area
+Before committing, files must be added to the staging area:
+git add <file>
+
+To add all files:
+git add .
+
+Committing Changes
+Once files are staged, commit them:
+git commit -m "Initial commit"
+
+💡 Commits should have clear, meaningful messages.
+Viewing Commit History
+To see a list of past commits:
+git log
+
+For a compact version:
+git log --oneline
+
+
+Next, we will cover File Operations in Git and Branching and Merging. Let me know if you have any questions so far! 🚀
+
+
+6. File Operations in Git
+Now that we understand the basics of Git workflow, let’s dive deeper into file handling in Git.
+
+6.1 Checking File Status
+To check the status of files in your repository, use:
+git status
+
+This command will show:
+ ✅ Tracked files (files already in Git)
+ ✅ Untracked files (files not yet added to Git)
+ ✅ Modified files (files that have changes but are not staged)
+Example output:
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        newfile.txt
+
+
+6.2 Tracking New Files
+To track a new file (untracked file), use:
+git add filename.txt
+
+To add all new files:
+git add .
+
+Now, running git status will show that the files are staged.
+
+6.3 Removing Files
+If you need to remove a file from Git but keep it in the working directory:
+git rm --cached filename.txt
+
+If you want to delete the file completely:
+git rm filename.txt
+
+Then commit the removal:
+git commit -m "Removed filename.txt"
+
+
+6.4 Moving or Renaming Files
+If you want to rename a file:
+git mv oldname.txt newname.txt
+
+Then commit the change:
+git commit -m "Renamed oldname.txt to newname.txt"
+
+
+6.5 Viewing File Differences
+To check what changes have been made before committing:
+git diff
+
+To see changes in a specific file:
+git diff filename.txt
+
+Once a file is staged, you can compare it with the last commit:
+git diff --staged
+
+
+6.6 Reverting Changes
+If you accidentally modify a file and want to discard the changes:
+git checkout -- filename.txt
+
+If you want to unstage a file (remove from staging but keep changes):
+git reset filename.txt
+
+If you want to reset all unstaged changes:
+git reset --hard
+
+🚨 Warning: --hard will delete all local changes permanently!
+
+7. Branching and Merging in Git
+Branching allows you to work on different features or fixes without affecting the main project.
+7.1 Checking Branches
+To see the list of branches:
+git branch
+
+The output will show:
+* main
+  feature-branch
+
+Here, * main indicates the current branch.
+
+7.2 Creating a New Branch
+To create a new branch:
+git branch new-feature
+
+To switch to the new branch:
+git checkout new-feature
+
+Or create and switch in one step:
+git checkout -b new-feature
+
+
+7.3 Merging Branches
+After working on a branch, merge it back into main:
+Switch to the main branch:
+ git checkout main
+
+
+Merge the feature branch:
+ git merge new-feature
+
+
+Delete the branch after merging:
+ git branch -d new-feature
+
+
+
+7.4 Handling Merge Conflicts
+If two branches modify the same file, Git may show a conflict during merging.
+Example:
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+
+To resolve:
+Open the file and look for conflict markers (<<<<<<<, =======, >>>>>>>).
+Edit the file to keep the correct changes.
+Add the resolved file:
+ git add index.html
+
+
+Complete the merge:
+ git commit -m "Resolved merge conflict in index.html"
+
+
+
+7.5 Deleting Branches
+Delete a branch locally:
+ git branch -d branch-name
+
+
+Delete a remote branch:
+ git push origin --delete branch-name
+
+
+
+This covers file handling and branching in Git. Next, we’ll discuss Git Remote Repositories and Working with GitHub. Let me know if you have any questions so far! 🚀
+8. Remote Repositories and Working with GitHub
+So far, we’ve worked with Git locally. Now, let’s explore remote repositories and how to work with GitHub (or other Git hosting services like GitLab, Bitbucket).
+
+8.1 Understanding Remote Repositories
+A remote repository is a version of your repository stored on the internet or network. It allows multiple people to collaborate on the same project.
+Common remote repository services:
+ ✅ GitHub → Most popular choice
+ ✅ GitLab → Offers CI/CD and self-hosting
+ ✅ Bitbucket → Supports Mercurial & Git
+ ✅ Azure DevOps → Microsoft’s Git service
+
+8.2 Setting Up a GitHub Repository
+Go to GitHub and Sign in or Create an account.
+Click on New Repository.
+Fill in:
+Repository name (e.g., my-project)
+Visibility → Public or Private
+Check "Initialize with a README" (optional)
+Click Create Repository
+
+8.3 Connecting a Local Repository to GitHub
+If you already have a local Git repository, follow these steps:
+Step 1: Initialize Git (if not already done)
+git init
+
+Step 2: Add a Remote Repository
+Copy the HTTPS/SSH URL from GitHub and add it as a remote:
+git remote add origin https://github.com/username/my-project.git
+
+To verify the remote:
+git remote -v
+
+Output:
+origin  https://github.com/username/my-project.git (fetch)
+origin  https://github.com/username/my-project.git (push)
+
+
+8.4 Pushing Code to GitHub
+After making commits locally, you need to push them to GitHub.
+Stage and commit changes:
+
+ git add .
+git commit -m "Initial commit"
+
+
+Push to GitHub:
+
+ git push -u origin main
+
+
+-u sets the default upstream branch.
+
+8.5 Cloning a Repository from GitHub
+If you want to download (clone) an existing repository from GitHub:
+git clone https://github.com/username/repository-name.git
+
+This creates a local copy of the repository.
+
+8.6 Fetching and Pulling Changes
+If others make changes to the repository, you need to sync your local repo.
+Fetch updates (without applying changes):
+ git fetch origin
+
+
+Pull the latest changes (fetch + merge):
+ git pull origin main
+ This keeps your local branch up to date.
+
+8.7 Pushing Changes to GitHub
+Once you’ve made changes locally:
+git add .
+git commit -m "Updated feature X"
+git push origin main
+
+
+8.8 Working with Forks & Pull Requests
+When contributing to open-source projects:
+Fork the repository to your GitHub account.
+Clone your fork locally:
+ git clone https://github.com/your-username/forked-repo.git
+
+
+Make changes, commit, and push to your fork.
+Create a Pull Request (PR) on the original repository.
+
+8.9 Removing and Changing Remote Repositories
+To change the remote URL:
+git remote set-url origin https://github.com/new-user/new-repo.git
+
+To remove the remote:
+git remote remove origin
+
+
+✅ Next: Git Rebase, Stash, and Advanced Git Operations
+Would you like to proceed with advanced Git operations, or do you have any questions about remote repositories? 🚀
+
+9. Advanced Git Operations: Rebase, Stash, and More
+Now that you know how to work with remote repositories, let's dive into some advanced Git features that help in managing and improving your workflow.
+
+9.1 Git Rebase
+Rebase is used to move or reapply commits on top of another base commit. It helps in keeping a clean commit history.
+How Rebase Works
+Let's say you have this branch structure:
+A --- B --- C (main)
+ \
+  D --- E (feature-branch)
+
+If you run git rebase main on feature-branch, it moves D and E on top of C:
+A --- B --- C --- D' --- E' (feature-branch)
+
+How to Use Rebase
+Switch to the feature branch:
+ git checkout feature-branch
+
+
+Rebase onto main:
+ git rebase main
+
+
+If conflicts occur, resolve them and continue:
+ git add .
+git rebase --continue
+
+
+If needed, abort the rebase:
+ git rebase --abort
+
+
+🔹 When to Use Rebase?
+Before merging a feature branch to avoid unnecessary merge commits.
+When you want a clean, linear commit history.
+
+9.2 Git Stash
+Sometimes, you have uncommitted changes but need to switch branches. Stashing saves your work temporarily.
+How to Use Stash
+Save uncommitted changes:
+ git stash
+
+
+See the list of stashes:
+ git stash list
+
+
+Apply the latest stash:
+ git stash apply
+
+
+Remove the applied stash:
+ git stash drop
+
+
+Apply and remove a stash in one command:
+ git stash pop
+
+
+Stash with a message:
+ git stash save "Working on bug fix"
+
+
+🔹 When to Use Stash?
+When you need to switch branches but don’t want to commit your changes.
+When you’re experimenting with some code but don’t want to lose your work.
+
+9.3 Git Cherry-Pick
+Cherry-picking allows you to pick specific commits from one branch and apply them to another.
+How to Use Cherry-Pick
+Get the commit ID from git log:
+ git log --oneline
+
+
+Cherry-pick the commit:
+ git cherry-pick <commit-hash>
+
+
+If there’s a conflict, resolve it, then continue:
+ git add .
+git cherry-pick --continue
+
+
+If needed, abort the cherry-pick:
+ git cherry-pick --abort
+
+
+🔹 When to Use Cherry-Pick?
+When you want to pick only one or a few specific commits instead of merging an entire branch.
+When a bug fix exists in another branch and you want to apply it quickly.
+
+9.4 Git Reset vs Revert
+Both git reset and git revert are used to undo changes, but they work differently.
+Git Reset (Moves HEAD Backwards)
+Soft Reset (Keeps changes staged)
+
+ git reset --soft HEAD~1
+
+
+Moves HEAD back but keeps changes staged.
+Mixed Reset (Unstages changes)
+
+ git reset --mixed HEAD~1
+
+
+Moves HEAD back and unstages changes.
+Hard Reset (Deletes changes permanently)
+
+ git reset --hard HEAD~1
+
+
+Moves HEAD back and deletes changes.
+Git Revert (Creates a New Commit to Undo a Change)
+If you want to undo a commit without losing history:
+git revert <commit-hash>
+
+This creates a new commit that undoes the changes.
+🔹 When to Use?
+Use reset when you want to move HEAD and modify history.
+Use revert when working with a shared branch (so history remains intact).
+
+9.5 Git Bisect (Find Bug Introductions)
+Git Bisect helps find the commit that introduced a bug.
+How to Use Git Bisect
+Start bisect:
+ git bisect start
+
+
+Mark the bad commit (where the bug exists):
+ git bisect bad
+
+
+Mark the last good commit:
+ git bisect good <commit-hash>
+
+
+Git will now check commits one by one.
+Test each commit and mark it good or bad:
+ git bisect good  # If the commit works fine
+git bisect bad   # If the commit has the bug
+
+
+Once the bad commit is found, exit bisect:
+ git bisect reset
+
+
+🔹 When to Use?
+When debugging large projects with many commits.
+When you want to quickly find which commit introduced a bug.
+
+9.6 Git Tagging (Version Control)
+Tags are used to mark versions in Git.
+How to Create a Tag
+Create a lightweight tag:
+ git tag v1.0
+
+
+Create an annotated tag (with message):
+ git tag -a v1.0 -m "Release version 1.0"
+
+
+View all tags:
+ git tag
+
+
+Push a tag to remote:
+ git push origin v1.0
+
+
+Delete a tag:
+ git tag -d v1.0
+
+
+Delete a tag remotely:
+ git push --delete origin v1.0
+
+
+🔹 When to Use?
+When marking release versions (e.g., v1.0, v2.0).
+When you need to rollback to a specific point in history.
+
+🚀 Summary of Advanced Git Commands
+Feature
+Command
+Rebase
+git rebase main
+Stash
+git stash, git stash pop
+Cherry-Pick
+git cherry-pick <commit-hash>
+Reset (Soft, Hard)
+git reset --soft HEAD~1, git reset --hard HEAD~1
+Revert
+git revert <commit-hash>
+Bisect
+git bisect start, git bisect good, git bisect bad
+Tagging
+git tag v1.0, git push origin v1.0
+
+
+✅ Next: Git Hooks, CI/CD Integration, and Best Practices
+Would you like to continue with Git Hooks, CI/CD integration, and workflow best practices? 🚀
+
+
+10. Git Hooks, CI/CD Integration, and Best Practices
+Now that you've mastered advanced Git commands, it's time to explore Git Hooks, Continuous Integration/Continuous Deployment (CI/CD), and best practices to make your workflow even more efficient.
+
+10.1 Git Hooks (Automate Actions in Git)
+Git Hooks are scripts that automatically run before or after events like commits, pushes, and merges.
+Types of Git Hooks
+Git supports two types of hooks:
+Client-Side Hooks – Trigger on local events (e.g., pre-commit, pre-push).
+Server-Side Hooks – Trigger on remote repository events (e.g., pre-receive, post-receive).
+Common Git Hooks and Their Usage
+Hook Name
+Runs Before/After
+Purpose
+pre-commit
+Before a commit is created
+Validate code formatting, run tests
+prepare-commit-msg
+Before the commit message editor opens
+Modify commit message
+commit-msg
+After the commit message is written
+Enforce commit message rules
+pre-push
+Before pushing to a remote
+Run tests, prevent broken code from being pushed
+post-merge
+After merging
+Run build processes, update dependencies
+
+How to Use Git Hooks?
+Navigate to the hooks directory in your repository:
+ cd .git/hooks
+
+
+Create or modify a hook file. For example, a pre-commit hook:
+ nano pre-commit
+
+
+Add a script (example: prevent committing debug logs):
+ #!/bin/bash
+if grep -r "console.log" .; then
+  echo "⚠️ Error: Remove console.log statements before committing."
+  exit 1
+fi
+
+
+Give execution permission:
+ chmod +x pre-commit
+
+
+Now, every commit will run the pre-commit check.
+
+10.2 Continuous Integration/Continuous Deployment (CI/CD) with Git
+CI/CD automates testing and deployment, ensuring quality and speed in software development.
+How CI/CD Works?
+Continuous Integration (CI):
+Developers push code to GitHub/GitLab/Bitbucket.
+Automated tests run using CI tools (e.g., GitHub Actions, Jenkins, CircleCI).
+Continuous Deployment (CD):
+If tests pass, the code is deployed automatically.
+Setting Up a CI Pipeline with GitHub Actions
+GitHub Actions allows automation of CI/CD workflows.
+Create a Workflow File:
+Inside your repository, create a directory:
+ mkdir -p .github/workflows
+
+
+Create a YAML file for GitHub Actions:
+ nano .github/workflows/ci.yml
+
+
+Add a Workflow to Run Tests on Every Push:
+ name: CI Pipeline
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm test
+
+
+Commit and Push:
+ git add .github/workflows/ci.yml
+git commit -m "Added CI pipeline"
+git push origin main
+
+
+Now, every push will trigger an automated test pipeline in GitHub Actions.
+
+10.3 Git Workflow Best Practices
+✅ 1. Use Branching Strategies
+Feature Branching (feature/branch-name): Develop new features in separate branches.
+GitFlow:
+main → Production-ready code.
+develop → Active development.
+feature/* → New features.
+hotfix/* → Critical fixes.
+✅ 2. Commit Best Practices
+Use clear, meaningful commit messages:
+ git commit -m "fix(auth): Corrected login validation issue"
+
+
+Follow Conventional Commits:
+ feat: New feature
+fix: Bug fix
+refactor: Code improvements without changing functionality
+test: Adding or modifying tests
+
+
+Avoid committing sensitive data like API keys.
+✅ 3. Use .gitignore Properly
+To prevent committing unwanted files, create a .gitignore file:
+# Node.js
+node_modules/
+.env
+dist/
+
+Commit it:
+git add .gitignore
+git commit -m "Added .gitignore file"
+
+✅ 4. Regularly Pull and Rebase
+Instead of git pull, use:
+git pull --rebase
+
+This keeps your branch clean and prevents unnecessary merge commits.
+✅ 5. Keep a Clean History
+Use rebase instead of merge for integrating feature branches:
+ git rebase main
+
+
+If needed, squash commits:
+ git rebase -i HEAD~3
+ Then mark the commits as squash.
+
+🚀 Summary
+Feature
+Command/Tool
+Git Hooks
+.git/hooks/pre-commit
+GitHub Actions (CI/CD)
+.github/workflows/ci.yml
+Branching Strategy
+git branch feature/new-feature
+Commit Best Practices
+git commit -m "feat: Added new API"
+Git Ignore
+.gitignore
+Rebase Instead of Merge
+git rebase main
+Squash Commits
+git rebase -i HEAD~3
+
+
+✅ Next: Git Submodules, Large File Storage (LFS), and Git Security
+Would you like to continue with Git Submodules, Large File Support (LFS), and Security best practices? 🚀
+11. Git Submodules, Large File Storage (LFS), and Security Best Practices
+Now, let's dive into Git Submodules, Git Large File Storage (LFS), and Git Security to handle large repositories efficiently and protect sensitive data.
+
+11.1 Git Submodules (Managing Multiple Repositories in One Project)
+What Are Git Submodules?
+Git Submodules allow you to include another Git repository inside your repository. This is useful when working with shared libraries, plugins, or external dependencies.
+How to Use Git Submodules?
+✅ 1. Add a Submodule
+If you want to add an external Git repository as a submodule:
+git submodule add https://github.com/example/library.git libs/library
+
+This will create a libs/library folder containing the external repository.
+✅ 2. Clone a Repository with Submodules
+If a repository already has submodules, use:
+git clone --recurse-submodules https://github.com/example/project.git
+
+or if you've already cloned it:
+git submodule update --init --recursive
+
+✅ 3. Updating a Submodule
+To get the latest changes from the submodule:
+cd libs/library
+git pull origin main
+cd ../
+git add libs/library
+git commit -m "Updated submodule to latest version"
+git push origin main
+
+✅ 4. Removing a Submodule
+Remove the submodule from .gitmodules:
+ git submodule deinit -f libs/library
+
+
+Remove its files:
+ rm -rf libs/library
+git rm -f libs/library
+
+
+Commit the changes:
+ git commit -m "Removed submodule"
+git push origin main
+
+
+
+11.2 Git Large File Storage (LFS)
+Git is not designed to handle large binary files (e.g., images, videos, datasets). Git LFS (Large File Storage) helps by storing large files outside the main repository while keeping lightweight references in Git.
+How to Use Git LFS?
+✅ 1. Install Git LFS
+Windows: Download from git-lfs.github.com
+Mac/Linux:
+ brew install git-lfs  # Mac
+sudo apt install git-lfs  # Ubuntu/Debian
+
+
+Enable Git LFS:
+ git lfs install
+
+
+✅ 2. Track Large Files
+To track specific file types (e.g., .psd, .zip, .mp4):
+git lfs track "*.psd"
+
+This updates the .gitattributes file.
+✅ 3. Add and Commit Files
+git add .gitattributes
+git add large_file.psd
+git commit -m "Added large file using Git LFS"
+git push origin main
+
+✅ 4. Cloning a Repository with Git LFS
+When cloning a repo with LFS files:
+git lfs clone https://github.com/example/project.git
+
+or after cloning:
+git lfs pull
+
+✅ 5. Untrack Large Files
+To remove a file from LFS and store it normally in Git:
+git lfs untrack "*.psd"
+git add .gitattributes
+git commit -m "Removed file from LFS tracking"
+
+
+11.3 Git Security Best Practices
+🔐 1. Avoid Storing Sensitive Information
+Never commit passwords, API keys, or sensitive data. Use environment variables instead.
+✅ Accidentally Committed a Secret?
+Remove it from the history:
+
+ git filter-branch --force --index-filter \
+"git rm --cached --ignore-unmatch secret-file.txt" \
+--prune-empty --tag-name-filter cat -- --all
+
+
+Force push:
+
+ git push origin --force --all
+
+
+Use GitHub Secret Scanning (GitHub automatically detects secrets in commits).
+
+
+
+🔐 2. Use .gitignore for Ignoring Sensitive Files
+Add sensitive files to .gitignore:
+# Ignore environment files
+.env
+secrets.json
+config/*.yml
+
+Commit the .gitignore:
+git add .gitignore
+git commit -m "Added .gitignore"
+git push origin main
+
+
+🔐 3. Enable GPG Signing for Secure Commits
+Sign commits using GPG to verify the author:
+Generate a GPG key:
+ gpg --full-generate-key
+
+
+List keys:
+ gpg --list-secret-keys --keyid-format=long
+
+
+Copy the GPG key ID and use it:
+ git config --global user.signingkey YOUR-GPG-KEY-ID
+git config --global commit.gpgsign true
+
+
+Make a signed commit:
+ git commit -S -m "Signed commit"
+
+
+
+🔐 4. Enable 2FA (Two-Factor Authentication) for GitHub
+To protect your account:
+Go to GitHub settings.
+Enable Two-Factor Authentication (2FA).
+
+🔐 5. Use SSH Keys for Authentication
+Instead of HTTPS authentication, use SSH keys for security:
+Generate an SSH key:
+ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+
+Add the SSH key to GitHub/GitLab/Bitbucket:
+ cat ~/.ssh/id_rsa.pub
+
+
+Test SSH connection:
+ ssh -T git@github.com
+
+
+
+🚀 Summary
+Feature
+Command/Tool
+Git Submodules
+git submodule add <repo-url> <path>
+Clone with Submodules
+git clone --recurse-submodules <repo-url>
+Git LFS Install
+git lfs install
+Track Large Files
+git lfs track "*.mp4"
+Remove Sensitive Data
+git filter-branch --force
+Sign Commits with GPG
+git commit -S -m "message"
+Use SSH Authentication
+ssh-keygen -t rsa -b 4096
+
+
+✅ Next: Git Troubleshooting, Recovery, and Advanced Collaboration
+Would you like to continue with Git Troubleshooting, Recovering Deleted Commits, and Advanced Collaboration Techniques? 🚀
+
+
+12. Git Troubleshooting, Recovery, and Advanced Collaboration Techniques
+In this section, we'll cover common Git troubleshooting techniques, how to recover lost commits, and advanced collaboration techniques to work efficiently in teams.
+
+12.1 Git Troubleshooting
+When working with Git, you may encounter errors like merge conflicts, detached HEAD state, or issues with pushing and pulling. Let’s go through solutions for common Git problems.
+🔹 1. Fixing Merge Conflicts
+✅ What is a Merge Conflict?
+A merge conflict occurs when Git cannot automatically merge changes from two branches due to conflicting modifications in the same file.
+✅ How to Resolve a Merge Conflict?
+Identify the conflicting files:
+ git status
+
+
+Open the file with the conflict. You’ll see markers like:
+ <<<<<<< HEAD
+This is from the main branch.
+=======
+This is from the feature branch.
+>>>>>>> feature-branch
+
+
+Manually edit the file, keeping the correct version.
+Mark as resolved and commit:
+ git add conflicted_file.txt
+git commit -m "Resolved merge conflict"
+
+
+✅ Abort a Merge
+If you want to cancel the merge and go back to the previous state:
+git merge --abort
+
+
+🔹 2. Fixing Detached HEAD State
+✅ What is Detached HEAD?
+A detached HEAD means you're not on a branch but directly on a commit.
+✅ Solution: Reattach to a Branch
+Check your branches:
+ git branch
+
+
+Switch back to the main branch:
+ git checkout main
+
+
+✅ Recover Lost Work from Detached HEAD
+If you made changes in detached HEAD and want to save them:
+git branch temp-branch
+git checkout temp-branch
+
+Now, your changes are safely in a branch.
+
+🔹 3. Undoing Mistakes in Git
+✅ Undo Last Commit (Keep Changes)
+git reset --soft HEAD~1
+
+This removes the last commit but keeps changes in the working directory.
+✅ Undo Last Commit (Remove Changes)
+git reset --hard HEAD~1
+
+This removes the last commit and discards all changes.
+✅ Undo a Pushed Commit
+Create a new commit that reverts changes:
+ git revert HEAD
+
+
+Force push to remove a commit (use with caution):
+ git push origin +main
+
+
+
+🔹 4. Recovering Deleted Files or Commits
+✅ Find Lost Commits
+If you lost a commit, check the reflog:
+git reflog
+
+You'll see something like:
+a1b2c3d HEAD@{0}: commit: Added new feature
+d4e5f6g HEAD@{1}: commit: Fixed bug
+
+To restore:
+git checkout a1b2c3d
+
+✅ Restore a Deleted File
+If you deleted a file but haven’t committed:
+git checkout -- deleted_file.txt
+
+If it was committed earlier:
+git log -- deleted_file.txt
+
+Find the commit where it existed and restore:
+git checkout <commit-id> -- deleted_file.txt
+
+
+12.2 Advanced Collaboration Techniques
+Working in a team requires effective branch management, rebasing, and handling multiple remote repositories.
+🔹 1. Rebasing vs. Merging
+Both git rebase and git merge combine changes, but they work differently.
+Feature
+Git Merge
+Git Rebase
+Preserves commit history
+✅ Yes
+❌ No
+Creates a new merge commit
+✅ Yes
+❌ No
+Results in a linear history
+❌ No
+✅ Yes
+
+✅ Using Rebase for a Cleaner History
+git checkout feature-branch
+git rebase main
+
+This rewrites the history as if changes were made on top of the latest main.
+
+🔹 2. Cherry-Picking Commits
+If you want to apply a specific commit from one branch to another:
+Find the commit:
+ git log --oneline
+
+
+Cherry-pick it:
+ git cherry-pick <commit-id>
+
+
+
+🔹 3. Stashing Work
+If you want to switch branches but have uncommitted changes:
+git stash
+git checkout another-branch
+
+To restore changes:
+git stash pop
+
+
+🔹 4. Managing Multiple Remotes
+If you're working with multiple Git repositories, you can add and manage them.
+✅ Check Remote Repositories
+git remote -v
+
+✅ Add a New Remote
+git remote add upstream https://github.com/example/repo.git
+
+✅ Fetch Changes from Another Remote
+git fetch upstream
+
+✅ Push Changes to a Different Remote
+git push upstream main
+
+
+🔹 5. Automating Git Workflow
+Use Git hooks to automate tasks like running tests before committing.
+✅ Enable Pre-Commit Hook
+nano .git/hooks/pre-commit
+
+Add a script to check for TODOs in the code:
+#!/bin/sh
+if grep -r 'TODO' .; then
+  echo "You have TODOs in your code!"
+  exit 1
+fi
+
+Save and make it executable:
+chmod +x .git/hooks/pre-commit
+
+
+🚀 Summary
+Feature
+Command
+Resolve Merge Conflicts
+git merge --abort, manually edit files
+Fix Detached HEAD
+git checkout main
+Undo Last Commit (Keep Changes)
+git reset --soft HEAD~1
+Undo Last Commit (Remove Changes)
+git reset --hard HEAD~1
+Find Lost Commits
+git reflog
+Rebase Feature Branch
+git rebase main
+Cherry-Pick a Commit
+git cherry-pick <commit-id>
+Stash Work
+git stash
+Push to Another Remote
+git push upstream main
+Enable Pre-Commit Hook
+.git/hooks/pre-commit
+
+
+✅ Next: Git Best Practices, Performance Optimization, and CI/CD Integration
+Would you like to continue with Git best practices, performance optimizations, and CI/CD (Continuous Integration/Continuous Deployment) setup? 🚀
+
+
+13. Git Best Practices, Performance Optimization, and CI/CD Integration
+Now that you understand Git troubleshooting, recovery, and advanced collaboration techniques, let’s dive into best practices, optimizing Git performance, and integrating Git with Continuous Integration/Continuous Deployment (CI/CD).
+
+13.1 Git Best Practices
+Following best practices in Git ensures clean, maintainable, and efficient version control.
+🔹 1. Follow a Consistent Branching Strategy
+Using a branching model makes it easier to collaborate and manage code. Some popular branching strategies:
+✅ Git Flow (Ideal for Large Teams)
+main → Stable, production-ready code
+develop → Ongoing development
+feature/* → Each new feature has its own branch
+hotfix/* → Quick fixes to production issues
+✅ GitHub Flow (Ideal for Small Teams & CI/CD)
+main → Always deployable
+feature-branch → Short-lived branch for new features
+pull request → Merged when feature is complete
+✅ Trunk-Based Development (For Fast Deployment)
+main → Frequent merges with feature flags
+
+🔹 2. Write Meaningful Commit Messages
+Follow the "Imperative Mood" style for commit messages:
+ ✅ Good:
+feat: Add authentication to user login
+fix: Resolve memory leak in checkout process
+chore: Update dependencies in package.json
+
+❌ Bad:
+Fixed bug
+Updated code
+Changed something
+
+✅ Follow Conventional Commit Format
+<type>(<scope>): <description>
+
+feat: New feature
+fix: Bug fix
+chore: Maintenance
+docs: Documentation updates
+test: Adding tests
+style: Code formatting
+refactor: Code restructuring
+
+🔹 3. Use .gitignore to Avoid Unwanted Files
+Before committing, ensure unnecessary files (logs, compiled files, dependencies, etc.) are ignored.
+✅ Common .gitignore for Node.js
+node_modules/
+dist/
+.env
+logs/
+
+✅ Common .gitignore for Java & Python
+# Java
+target/
+*.class
+*.jar
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+
+Run:
+git rm -r --cached .
+git add .
+git commit -m "Update .gitignore"
+
+
+🔹 4. Keep Your Repository Clean
+Delete merged branches to prevent clutter:
+ git branch -d feature-branch
+git push origin --delete feature-branch
+
+
+Use squash commits before merging for cleaner history:
+ git rebase -i HEAD~3
+
+
+
+13.2 Git Performance Optimization
+Large repositories can slow down Git operations. Here are some ways to optimize performance.
+🔹 1. Shallow Clone to Speed Up Fetching
+If you only need the latest commits:
+git clone --depth=1 https://github.com/example/repo.git
+
+🔹 2. Optimize Large Repositories
+Clean up unnecessary files using Git garbage collection:
+ git gc
+
+
+Remove large unwanted files from history:
+ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch large-file.zip' --prune-empty --tag-name-filter cat -- --all
+
+
+Use Git LFS (Large File Storage) for media files:
+ git lfs install
+git lfs track "*.mp4"
+git add .gitattributes
+git commit -m "Track large files with LFS"
+
+
+🔹 3. Reduce Network Traffic
+Fetch only specific branches instead of everything:
+ git fetch origin main
+
+
+Limit history when pulling changes:
+ git pull --depth=10
+
+
+
+13.3 Git and CI/CD Integration
+CI/CD (Continuous Integration & Continuous Deployment) helps automate testing, building, and deploying applications.
+🔹 1. What is CI/CD?
+Continuous Integration (CI): Automatically tests and merges code changes.
+Continuous Deployment (CD): Deploys the application automatically after CI.
+🔹 2. Using GitHub Actions for CI/CD
+GitHub Actions allows automating testing, building, and deployment.
+✅ Example: Basic CI/CD Workflow for Node.js
+Create a file .github/workflows/ci.yml:
+name: CI Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm test
+
+When you push code, GitHub will:
+ ✅ Install dependencies
+ ✅ Run tests
+🔹 3. Using GitLab CI/CD
+For GitLab, create a .gitlab-ci.yml file:
+stages:
+  - test
+  - deploy
+
+test:
+  script:
+    - npm install
+    - npm test
+
+deploy:
+  script:
+    - echo "Deploying application..."
+  only:
+    - main
+
+🔹 4. Connecting Git to Jenkins for CI/CD
+Install Jenkins Git Plugin
+Set up GitHub Webhooks
+Configure Build Triggers in Jenkins to run on git push
+
+🚀 Summary
+Task
+Command / Action
+Follow Branching Strategy
+Use Git Flow, GitHub Flow, or Trunk-Based Development
+Write Good Commit Messages
+feat: Add login authentication
+Ignore Unwanted Files
+.gitignore
+Shallow Clone Large Repos
+git clone --depth=1
+Enable Git LFS
+git lfs track "*.mp4"
+Optimize Git Performance
+git gc, git pull --depth=10
+CI/CD with GitHub Actions
+.github/workflows/ci.yml
+CI/CD with GitLab
+.gitlab-ci.yml
+CI/CD with Jenkins
+Install Git Plugin, Set Up Webhooks
+
+
+✅ Next: Git Security, Hooks, and Automation
+Would you like to continue with Git security best practices, advanced Git hooks, and automation? 🚀
+
+
